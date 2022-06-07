@@ -85,8 +85,8 @@ namespace CRM_CUS.Controllers
             {
                 return NotFound();
             }
-            ViewData["PersonId"] = new SelectList(_context.People, "Id", "Id", passport.PersonId);
-            ViewData["TypeDocumentId"] = new SelectList(_context.TypeDocuments, "Id", "Id", passport.TypeDocumentId);
+            ViewData["PersonId"] = new SelectList(_context.People, "Id", "FullName", passport.PersonId);
+            ViewData["TypeDocumentId"] = new SelectList(_context.TypeDocuments, "Id", "DescriptionRu", passport.TypeDocumentId);
             return View(passport);
         }
 
@@ -122,8 +122,8 @@ namespace CRM_CUS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PersonId"] = new SelectList(_context.People, "Id", "Id", passport.PersonId);
-            ViewData["TypeDocumentId"] = new SelectList(_context.TypeDocuments, "Id", "Id", passport.TypeDocumentId);
+            ViewData["PersonId"] = new SelectList(_context.People, "Id", "FullName", passport.PersonId);
+            ViewData["TypeDocumentId"] = new SelectList(_context.TypeDocuments, "Id", "DescriptionRu", passport.TypeDocumentId);
             return View(passport);
         }
 

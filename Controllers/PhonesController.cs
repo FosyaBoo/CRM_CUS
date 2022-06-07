@@ -118,7 +118,7 @@ namespace CRM_CUS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PersonId"] = new SelectList(_context.People, "Id", "Id", phone.PersonId);
+            ViewData["PersonId"] = new SelectList(_context.People, "Id", "FullName", phone.PersonId);
             return View(phone);
         }
 
