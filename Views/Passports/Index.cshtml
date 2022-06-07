@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CRM_CUS.Models.Passport>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdWhom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdWhomCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeDocument)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdWhom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdWhomCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeDocument.Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
