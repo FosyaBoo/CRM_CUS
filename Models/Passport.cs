@@ -13,6 +13,7 @@ namespace CRM_CUS.Models
         public DateTime? IdDate { get; set; }
         public string? IdWhom { get; set; }
         public string? IdWhomCode { get; set; }
+        public DateTime? IdExpireDate { get; set; }
 
         public virtual Person? Person { get; set; }
         public virtual TypeDocument? TypeDocument { get; set; }

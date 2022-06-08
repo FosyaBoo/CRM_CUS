@@ -7,9 +7,11 @@ namespace CRM_CUS.Models
     {
         public Person()
         {
+            AccountDeposits = new HashSet<AccountDeposit>();
             Addresses = new HashSet<Address>();
             Passports = new HashSet<Passport>();
             Phones = new HashSet<Phone>();
+            Transactions = new HashSet<Transaction>();
         }
 
         public Guid Id { get; set; }
@@ -21,8 +23,10 @@ namespace CRM_CUS.Models
         public string? Gender { get; set; }
         public string? FullName { get; set; }
 
+        public virtual ICollection<AccountDeposit> AccountDeposits { get; set; }
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Passport> Passports { get; set; }
         public virtual ICollection<Phone> Phones { get; set; }
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

@@ -22,6 +22,7 @@ namespace CRM_CUS.Controllers
         public async Task<IActionResult> Index()
         {
             var customersContext = _context.Passports.Include(p => p.Person).Include(p => p.TypeDocument);
+
             return View(await customersContext.ToListAsync());
         }
 

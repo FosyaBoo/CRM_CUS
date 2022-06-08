@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CRM_CUS.Models.Passport>
+﻿@model IEnumerable<CRM_CUS.Models.Transaction>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,25 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Serial)
+                @Html.DisplayNameFor(model => model.ServerTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Number)
+                @Html.DisplayNameFor(model => model.Amount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdWhom)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdWhomCode)
+                @Html.DisplayNameFor(model => model.Currency.NameCurrency)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Person.FullName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TypeDocument.DescriptionRu)
+                @Html.DisplayNameFor(model => model.TransactionType.Description)
             </th>
             <th></th>
         </tr>
@@ -40,25 +34,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Serial)
+                @Html.DisplayFor(modelItem => item.ServerTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Number)
+                @Html.DisplayFor(modelItem => item.Amount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdWhom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdWhomCode)
+                @Html.DisplayFor(modelItem => item.Currency.NameCurrency)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Person.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TypeDocument.DescriptionRu)
+                @Html.DisplayFor(modelItem => item.TransactionType.Description)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
